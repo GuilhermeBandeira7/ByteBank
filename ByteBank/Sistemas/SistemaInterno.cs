@@ -9,7 +9,7 @@ namespace ByteBank.Sistemas
 {
     public class SistemaInterno
     {
-        public bool Logar(Autenticavel funcionario, string senha)
+        public bool Logar(IAutenticavel funcionario, string senha)
         {
             bool usuarioAutenticado = funcionario.Autenticar(senha); // boolean variable receives the method that verifies the user's authentication passing a password as argument.
             

@@ -7,7 +7,7 @@ using ByteBank.Sistemas;
 
 namespace ByteBank.Funcionarios
 {
-    public class Diretor : Autenticavel // inhering autenticavel makes diretor and gerentedeconta the only authenticated
+    public class Diretor : FuncionarioAutenticavel // inhering autenticavel makes diretor and gerentedeconta the only authenticated
     {
         
 
@@ -17,6 +17,10 @@ namespace ByteBank.Funcionarios
 
         }
 
+        public bool IAutenticar(string senha) // interface implementation
+        {
+            return true;
+        }
         public override void AumentarSalario()
         {
             Salario *= 1.15; // override with plus 15%

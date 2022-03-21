@@ -48,19 +48,23 @@ namespace ByteBank
 
         public static void UsarSistema()
         {
-            SistemaInterno sistema = new SistemaInterno();           
-            Autenticavel roberta = new Diretor("856.624.874-65"); // now we use Autenticavel to create an instance of the class
+            SistemaInterno sistema = new SistemaInterno();
+            Diretor roberta = new Diretor("856.624.874-65"); // now we use Autenticavel to create an instance of the class
             roberta.Nome = "Roberta";
             roberta.Senha = "1234";
 
-            Autenticavel camilla = new GerenteDeConta("963.418.247-85");
+            GerenteDeConta camilla = new GerenteDeConta("963.418.247-85");
             camilla.Nome = "Camilla";
             camilla.Senha = "4321";
-            
-            
+
+            ParceiroComercial parceiro = new ParceiroComercial(); // instance and authentication of a ParceiroComercial
+            parceiro.Senha = "parca";
+
+
 
             sistema.Logar(roberta, "1234");
-            sistema.Logar(roberta, "abcd");
+            sistema.Logar(camilla, "4321");
+            sistema.Logar(parceiro, "parca");
         }
     }
 }
